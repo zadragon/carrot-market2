@@ -9,4 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
+
+//https://nomadcoders.co/carrot-market/lectures/3511
+//#6.3 What is PlanetScale (06:55) 할 차례
 export default MyApp;
