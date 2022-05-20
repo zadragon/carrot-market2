@@ -5,6 +5,7 @@ import Input from "../components/input";
 import { cls } from "../libs/utils";
 
 const Enter: NextPage = () => {
+  const {} = useForm();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => setMethod("email");
   const onPhoneClick = () => setMethod("phone");
