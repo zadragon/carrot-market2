@@ -10,8 +10,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 
-//https://nomadcoders.co/carrot-market/lectures/3527
-//#8.3 Clean Code part Two (07:31)
+//https://nomadcoders.co/carrot-market/lectures/3524
+//8.4 withHandler (12:58)
 
 //prisma 연결 : pscale connect carrot-market
 
