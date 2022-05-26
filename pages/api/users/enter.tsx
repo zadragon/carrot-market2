@@ -32,22 +32,21 @@ async function handler(
     },
   });
   if (phone) {
-    const message = await twilioClient.messages.create({
-      messagingServiceSid: process.env.TWILIO_MSID,
-      to: process.env.MY_PHONE!,
-      body: `Your login token is ${payload}.`,
-    });
-    console.log(message);
+    // const message = await twilioClient.messages.create({
+    //   messagingServiceSid: process.env.TWILIO_MSID,
+    //   to: process.env.MY_PHONE!,
+    //   body: `Your login token is ${payload}.`,
+    // });
+    // console.log(message);
   }else if(email){
-     const email = await mail.send({
-         from: "zayong@feelway.com",
-         to: "zayong@feelway.com",
-         subject:"캐럿마켓 인증 메일",
-         text:`your token is ${payload}`,
-         html:`<strong>your token is ${payload}</strong>`
-     });
-     console.log(email);
-     
+    //  const email = await mail.send({
+    //      from: "zayong@feelway.com",
+    //      to: "zayong@feelway.com",
+    //      subject:"캐럿마켓 인증 메일",
+    //      text:`your token is ${payload}`,
+    //      html:`<strong>your token is ${payload}</strong>`
+    //  });
+    //  console.log(email);
   }
   return res.json({
     ok: true,
