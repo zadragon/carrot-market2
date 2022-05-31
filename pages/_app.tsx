@@ -23,4 +23,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 //prisma 연결 : pscale connect carrot-market
 
 
+
+
 export default MyApp;
