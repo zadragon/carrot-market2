@@ -4,6 +4,7 @@ interface ButtonProps {
   large?: boolean;
   text: string;
   [key: string]: any;
+  
 }
 
 export default function Button({
