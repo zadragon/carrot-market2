@@ -17,12 +17,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-//https://nomadcoders.co/carrot-market/lectures/3543
-//#11.2 Upload API (07:51)
-
-//prisma 연결 : pscale connect carrot-market
-
-
-
-
 export default MyApp;

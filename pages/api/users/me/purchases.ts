@@ -7,32 +7,29 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseType>
 ) {
-
-    const {
-        session:{user}
-    } = req;
-
-    const purchases = await client.purchase.findMany({
-        where: { 
-            userId: user?.id
+  const {
+    session: { user },
+  } = req;
+  const purchases = await client.purchase.findMany({
+    where: {
+      userId: user?.id,
+    },
+    include: {
+      product: {
+        include: {
+          _count: {
+            select: {
+              favs: true,
+            },
+          },
         },
-        include:{
-          product:{
-              include:{
-                  _count:{
-                      select:{
-                          favs:true,
-                      }
-                  }
-              }
-          }
-      }
-    });
-
-    res.json({
-        ok: true,
-        purchases,
-    });
+      },
+    },
+  });
+  res.json({
+    ok: true,
+    purchases,
+  });
 }
 
 export default withApiSession(

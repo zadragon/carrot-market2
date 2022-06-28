@@ -3,10 +3,11 @@ import FloatingButton from "@components/floating-button";
 import Item from "@components/item";
 import Layout from "@components/layout";
 import useUser from "@libs/client/useUser";
+import Head from "next/head";
 import useSWR from "swr";
 import { Product } from "@prisma/client";
 
-interface ProductWithCount extends Product {
+export interface ProductWithCount extends Product {
   _count: {
     favs: number;
   };
@@ -18,13 +19,13 @@ interface ProductsResponse {
 }
 
 const Home: NextPage = () => {
-  const {user, isLoading} = useUser();
-  const {data} = useSWR<ProductsResponse>("/api/products");
-  console.log(data);  
-  console.log(user);
-  
+  const { user, isLoading } = useUser();
+  const { data } = useSWR<ProductsResponse>("/api/products");
   return (
     <Layout title="홈" hasTabBar>
+      <Head>
+        <title>Home</title>
+      </Head>
       <div className="flex flex-col space-y-5 divide-y">
         {data?.products?.map((product) => (
           <Item
@@ -32,7 +33,6 @@ const Home: NextPage = () => {
             key={product.id}
             title={product.name}
             price={product.price}
-            comments={1}
             hearts={product._count.favs}
           />
         ))}
