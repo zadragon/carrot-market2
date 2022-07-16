@@ -31,4 +31,4 @@ export default withApiSession(
         methods: ["GET"],
         handler,
     })
-)
+);
