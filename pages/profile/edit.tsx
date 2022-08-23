@@ -67,7 +67,7 @@ const EditProfile: NextPage = () => {
                 avatarId: id,
             });
         } else {
-            editProfile({
+            editProfile({ 
                 email,
                 phone,
                 name,
